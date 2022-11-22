@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "0b30583e-fc7d-493f-a528-b545b12e1c7e",
+		"name": "hangerStock-API  Dev buyer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6776436"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\":{\n        \"first_name\" : \"dewan\",\n        \"last_name\" : \"fmeadown\",\n        \"email\" : \"ec2-ws20@da.com\",\n        \"phone\" : \"01714533287\",\n        \"password\" : \"12345\"  \n    },\n    \"business\":{\n        \"name\" : \"dean ecommerce\",\n        \"register_no\": \"12347647\",\n        \"reside_state\": \"dhaka\"\n    },\n    \"warehouse\":{\n        \"email\" : \"test@gmail.coom\",\n        \"phone\":\"01714533215 \",\n        \"fax\":\"1574254\",\n        \"address_type\":\"test\",\n        \"address_line_one\":\"test\",\n        \"address_line_two\":\"test\",\n        \"city\":\"test\",\n        \"zip_code\":\"4518\",\n        \"country_id\":1,\n        \"sate_id\": 2,\n        \"additional_note\":\"test\"\n},\n    \"rule\":{\n        \"is_loading_dock\" : true,\n        \"is_lift_gate_required\": true,\n        \"is_allow_local_pickup\": true\n    }\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/create"
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/get/id"
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n\n{\n    \"first_name\" : \"dewan\",\n    \"last_name\" : \"meadown\",\n    \"phone\" : \"01817533487\",\n    \"id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/update"
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\" : \"123456\",\n    \"new_password\" : \"12345\",\n    \"id\" : 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/change/password"
+					},
+					"response": []
+				},
+				{
+					"name": "get all user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://hangerstock.com/api/user/get/id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user_address",
+			"item": [
+				{
+					"name": "user_address create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 3,\n    \"company\" : \"test\",\n    \"telephone\" : \"test\",\n    \"address_type\" : \"test\",\n    \"street_address\" : \"test\",\n    \"street_address_two\" : \"this test\",\n    \"city\" : \"newyork\",\n    \"state \":\"newyork\",\n    \"country\": \"USA\",\n    \"is_liftgate_required\": true,\n    \"is_default\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/address/create"
+					},
+					"response": []
+				},
+				{
+					"name": "get all address by user_id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/address/get/all"
+					},
+					"response": []
+				},
+				{
+					"name": "get user address by id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 1,\n    \"id\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/address/get/single/id"
+					},
+					"response": []
+				},
+				{
+					"name": "update address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"company\": \"dewan ecommerce\",\n    \"telephone\": \"880581-868\",\n    \"address_type\": \"residence\",\n    \"street_address\": \"49-greenroad\",\n    \"street_address_two\": \"Alaminroad,Dhanmondhi\",\n    \"city\": \"Dhaka\",\n    \"state\": null,\n    \"country\": \"Banglades\",\n    \"is_liftgate_required\": 0,\n    \"is_default\": 1,\n    \"user_id\":1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/address/update"
+					},
+					"response": []
+				},
+				{
+					"name": "delete address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 1,\n    \"id\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/address/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"ec2-ws20@da.com\",\n    \"password\" : \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://hangerstock.com/api/user/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post Bid",
+			"item": [
+				{
+					"name": "get all  bid by auction id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"user_id\":1,\n    \"auction_id\" : 1,\n    \"bid_amount\":\"450\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5030/api/user/auction/bid/id"
+					},
+					"response": []
+				},
+				{
+					"name": "get all  user bid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"user_id\":1,\n    \"auction_id\" : 1,\n    \"bid_amount\":\"450\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5030/api/user/auction/bid/all"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lcoation data",
+			"item": [
+				{
+					"name": "country",
+					"item": [
+						{
+							"name": "country by region",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5030/api/country/by/region/3"
+							},
+							"response": []
+						},
+						{
+							"name": "add country",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"region_id\" : 4,\n    \"name\" : \"Taiwan\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5030/api/country/create"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "region",
+					"item": [
+						{
+							"name": "all region",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5030/api/region/get/all"
+							},
+							"response": []
+						},
+						{
+							"name": "add region",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \n    \"name\" : \"Taiwan\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5030/api/region/create"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "state",
+					"item": [
+						{
+							"name": "all region",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5030/api/region/get/all"
+							},
+							"response": []
+						},
+						{
+							"name": "add region",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \n    \"name\" : \"Taiwan\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5030/api/region/create"
+							},
+							"response": []
+						},
+						{
+							"name": "state by country",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5030/api/state/by/country/1"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
